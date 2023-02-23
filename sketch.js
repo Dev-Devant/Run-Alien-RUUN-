@@ -11,7 +11,16 @@ function preload(){
 }
 
 function setup() {
-  init()
+ 
+  createCanvas(windowWidth * 0.8, windowWidth * 0.8/scaled);
+  back.resize(width,height)
+  mountains.resize(width*2,height)
+  ground.resize(width*3,height/3)
+  animation = new SpriteAnimation(alien, 0.1 * width,0.75 * height, alien.width/6,width/9,6,6)
+  imageMode(CENTER)
+  offsetM = width 
+  offsetG = width
+  
 }
 
 function draw() {
@@ -34,19 +43,3 @@ function draw() {
   
 }
 
-function init(){
-  createCanvas(windowWidth, windowWidth/scaled);
-  back.resize(width,height)
-  mountains.resize(width*2,height)
-  ground.resize(width*3,height/3)
-  animation = new SpriteAnimation(alien, 0.1 * width,0.75 * height, alien.width/6,width/9,6,6)
-  imageMode(CENTER)
-  offsetM = width 
-  offsetG = width
-  
-  
-}
-
-function windowResized() {
-    init()
-}
